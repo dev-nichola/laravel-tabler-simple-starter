@@ -7,7 +7,6 @@
 
     <title>Laravel Tabler UI</title>
 
-
     <link rel="shortcut icon" href="{{ asset('static/logo-white.svg') }}" type="image/x-icon">
     <link href="{{ asset('dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
 
