@@ -96,7 +96,6 @@
                           <div class="col text-truncate">
                             <a href="#" class="text-body d-block">Example 2</a>
                             <div class="d-block text-secondary text-truncate mt-n1">
-                              justify-content:between ⇒ justify-content:space-between (#29734)
                             </div>
                           </div>
                           <div class="col-auto">
