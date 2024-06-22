@@ -4,56 +4,54 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Datatables - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
-    <!-- CSS files -->
+
+    <title>Laravel Tabler UI</title>
+
+
+    <link rel="shortcut icon" href="{{ asset('static/logo-white.svg') }}" type="image/x-icon">
     <link href="{{ asset('dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
-    <link href="{{ asset('dist/css/tabler-flags.min.css?1692870487') }}" rel="stylesheet"/>
-    <link href="{{ asset('dist/css/tabler-payments.min.css?1692870487') }}" rel="stylesheet"/>
-    <link href="{{ asset('dist/css/tabler-vendors.min.css?1692870487') }}" rel="stylesheet"/>
-    <link href="{{ asset('dist/css/demo.min.css?1692870487') }}" rel="stylesheet"/>
-    <style>
-      @import url('https://rsms.me/inter/inter.css');
-      :root {
-      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-      }
-      body {
-      	font-feature-settings: "cv03", "cv04", "cv11";
-      }
-    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {{-- Datatable --}}
+    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+
   </head>
   <body >
-    <script src="{{ asset('dist/js/demo-theme.min.js?1692870487') }}"></script>
-    <div class="page">
 
+    {{-- Section Page --}}
+    <div class="page hidden lg:block">
       @include("partials.header")
-
       @include('partials.navigation')
-
-
       <div class="page-wrapper">
-        {{ $slot }}
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+
+                {{-- Content --}}
+                {{ $slot }}
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    
+    </div>    
 
+
+    {{-- Attention --}}
+    <div class="lg:hidden flex justify-center items-center vh-100">
+      <h1 class="font-semibold">Only Can Show At Desktop Mode</h1>
     </div>
-    
 
-    <script src="{{ asset('dist/libs/list.js/dist/list.min.js?1692870487') }}" defer></script>
-    
+    {{-- Script --}}
+    <script src="{{ asset('dist/js/demo-theme.min.js?1692870487') }}"></script>
     <script src="{{ asset('dist/js/tabler.min.js?1692870487') }}" defer></script>
-    <script src="{{ asset('dist/js/demo.min.js?1692870487') }}" defer></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-      const list = new List('table-default', {
-      	sortClass: 'table-sort',
-      	listClass: 'table-tbody',
-      	valueNames: [ 'sort-name', 'sort-type', 'sort-city', 'sort-score',
-      		{ attr: 'data-date', name: 'sort-date' },
-      		{ attr: 'data-progress', name: 'sort-progress' },
-      		'sort-quantity'
-      	]
-      });
-      })
-    </script>
+
+    @stack("scripts")
   </body>
 </html>
