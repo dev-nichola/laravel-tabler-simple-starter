@@ -7,6 +7,8 @@
 
     <title>Laravel Tabler UI</title>
 
+    @vite(['resources/css/app.css', 'resources/css/app.js'])
+
     <link rel="shortcut icon" href="{{ asset('static/logo-white.svg') }}" type="image/x-icon">
     <link href="{{ asset('dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
 
@@ -18,6 +20,7 @@
 
   </head>
   <body >
+   
 
     {{-- Section Page --}}
     <div class="page d-none d-lg-block">
@@ -26,8 +29,10 @@
       <div class="page-wrapper">
         <div class="page-header d-print-none">
           <div class="container-xl">
+            @include('sweetalert::alert')
             <div class="row g-2 align-items-center">
               <div class="col">
+                
 
                 {{-- Content --}}
                 {{ $slot }}

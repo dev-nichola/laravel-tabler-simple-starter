@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
+use Masmerise\Toaster\Toaster;
 
 class RegisterController extends Controller
 {
@@ -27,6 +28,8 @@ class RegisterController extends Controller
             "password" => $encrypt
         ]);
 
-        return redirect()->intended("/dashboard");
+        setToasterSuccess("Sukses Melakukan Register");
+        
+        return redirect()->route('login');
     }
 }

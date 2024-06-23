@@ -7,7 +7,7 @@
           <h2 class="card-title text-center mb-4">Login</h2>
           <div class="mb-3">
             <x-form-label :required="true" label="Email Address"/>
-            <x-form-input name="email" placeholder="Inser Email Address"/>
+            <x-form-input name="email" placeholder="Inser Email Address" value="{{ old('email') }}"/>
             <x-form-error key="email"/>
           </div>
 
@@ -24,7 +24,8 @@
       </form>
 
       <div class="text-center text-secondary mt-3">
-        Already have account? <a href="./sign-in.html" tabindex="-1">Sign in</a>
-      </div>
+        Don't have an account? <a href="{{ route('register') }}" wire:navigate tabindex="-1">Register</a>
+    </div>
+    
     </div>
 </x-auth-layout>

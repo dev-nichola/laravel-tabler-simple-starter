@@ -8,6 +8,7 @@
         "php": "^8.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "realrashid/sweet-alert": "^7.2",
         "yajra/laravel-datatables": "^11.0"
     },
     "require-dev": {
@@ -23,7 +24,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helper/Toaster.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

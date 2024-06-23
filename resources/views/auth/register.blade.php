@@ -4,17 +4,17 @@
         @method('POST')
         
         <div class="card-body">
-          <h2 class="card-title text-center mb-4">Create new account</h2>
+          <h2 class="card-title text-center mb-4">Register</h2>
           <div class="mb-3">
             
             <x-form-label :required="true" label="Name"/>
-            <x-form-input name="name" placeholder="Insert Name"/>
+            <x-form-input name="name" placeholder="Insert Name" value="{{ old('name') }}"/>
             <x-form-error key="name"/>
            
           </div>
           <div class="mb-3">
             <x-form-label :required="true" label="Email Address"/>
-            <x-form-input name="email" placeholder="Inser Name"/>
+            <x-form-input name="email" placeholder="Inser Name" value="{{ old('email') }}"/>
             <x-form-error key="email"/>
           </div>
 
@@ -25,13 +25,13 @@
           </div>
 
           <div class="form-footer">
-            <button type="submit" class="btn btn-primary w-100">Create new account</button>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
           </div>
         </div>
       </form>
 
       <div class="text-center text-secondary mt-3">
-        Already have account? <a href="./sign-in.html" tabindex="-1">Sign in</a>
+       Already have account? <a href="{{ route('login') }}" wire:navigate tabindex="-1">Login</a>
       </div>
     </div>
 </x-auth-layout>
