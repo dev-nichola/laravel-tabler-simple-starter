@@ -10,19 +10,17 @@
     <link rel="shortcut icon" href="{{ asset('static/logo-white.svg') }}" type="image/x-icon">
     <link href="{{ asset('dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
     {{-- Datatable --}}
-    <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
+    <link href="{{ asset('dist/lib/datatable/bootstrap-datatable.css') }}" rel="stylesheet">
+    <script src="{{asset('dist/lib/datatable/jquery.js')}}"></script>
+    <script src="{{ asset('dist/lib/datatable/jquery-datatable.js') }}"></script>
+    <script src="{{ asset('dist/lib/datatable/bootstrap-datatable.js') }}"></script>
 
   </head>
   <body >
 
     {{-- Section Page --}}
-    <div class="page hidden lg:block">
+    <div class="page d-none d-lg-block">
       @include("partials.header")
       @include('partials.navigation')
       <div class="page-wrapper">
@@ -43,9 +41,9 @@
 
 
     {{-- Attention --}}
-    <div class="lg:hidden flex justify-center items-center vh-100">
-      <h1 class="font-semibold">Only Can Show At Desktop Mode</h1>
-    </div>
+    <div class="d-flex d-lg-none justify-content-center align-items-center vh-100">
+      <h1 class="fw-semibold">Only Can Show At Desktop Mode</h1>
+  </div>
 
     {{-- Script --}}
     <script src="{{ asset('dist/js/demo-theme.min.js?1692870487') }}"></script>
