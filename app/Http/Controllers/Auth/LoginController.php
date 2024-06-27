@@ -15,13 +15,11 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request) : RedirectResponse
     {
-        $request->validated();
-
-        $credentials = $request->only(['email', 'password']);
+       $credentials = $request->validated();
 
         if(auth()->attempt($credentials))
         {
-            session()->regenerateToken();
+            session()->regenerate();
 
             return redirect()->route("dashboard");
         }
